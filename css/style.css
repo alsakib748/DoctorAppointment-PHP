@@ -1,0 +1,122 @@
+:root{
+    --bg-light-violet: #CF9FFF;
+    --bg-dark-violet: #c94aff;
+    --bg-danger: #FF5733;
+}
+
+.bg-primary{
+    background-color: var(--bg-light-violet) !important;
+}
+
+.bg-danger{
+    background-color: var(--bg-danger) !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.row.top-bar span {
+    font-size: 12px;
+    padding: 1px 5px;
+}
+
+.swiper{
+    z-index: -1010;
+}
+
+/* Todo: about section and contact section background image */
+.about{
+    height: 150px;
+    background:linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%),url("../admin/images/about/demo/img-2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #5f5f5f;
+    border-bottom: 3px solid rgb(58, 58, 192);
+} 
+
+label.error{
+    font-weight: 700;
+    display: block;
+    color: #f00;
+    font-size: 14px;
+}
+
+input.error{
+    border-color: #f00;
+}
+
+.text-violet{
+    color: #b197fc;
+}
+
+/* ----------------------------------- Admin Section CSS Start ------------------------------ */
+
+li.dash-item:hover {
+    background: #ee82ee7d;
+    border-radius: 5px;
+    border-right: 3px solid violet;
+    color: var(--f-violet-dark);
+}
+
+li.dash-item:hover a{
+    color: var(--f-violet-dark) !important;
+}
+
+.show-search {
+    width: 260px;
+    background: rgba(13, 110, 253, 0.25);
+    height: 300px;
+    position: absolute;
+    top: 125px;
+    right: 16px;
+    border-radius: 5px;
+    z-index: 1020;
+}
+
+.show-search ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.show-search ul li{
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #0a58ca;
+    transition: 0.3s;
+}
+
+.show-search ul li:hover{
+    background: #0d6efdb8;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* ------------------------- Admin Section CSS  End----------------------------- */
+
+/* ------------------------- Doctor Section CSS  Start----------------------------- */
+
+li.dash-item:hover {
+    background: #ee82ee7d;
+    border-radius: 5px;
+    border-right: 3px solid violet;
+    color: var(--f-violet-dark);
+}
+
+li.dash-item:hover a{
+    color: var(--f-violet-dark) !important;
+}
+
+/* ------------------------- Doctor Section CSS  End----------------------------- */
+
+/* ------------------------- Media Queries for Front End ------------------------- */
