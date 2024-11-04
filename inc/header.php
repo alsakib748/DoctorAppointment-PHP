@@ -20,8 +20,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
     <style>
         @media(max-width: 480px) {
 
@@ -442,7 +447,7 @@ width: 100% !important;
         <section class="navigation">
             <nav class="navbar navbar-expand-lg bg-white shadow">
                 <div class="container d-flex">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="#">Doctor Appointment</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -466,9 +471,12 @@ width: 100% !important;
                             <?php if ((isset($_SESSION["userLogin"]) && $_SESSION["userLogin"] == true) || (isset($_SESSION["adminLogin"]) && $_SESSION["adminLogin"] == true)) {
                                 if (isset($_SESSION["userLogin"]) && $_SESSION["userLogin"] == true) {
                             ?>
-                                    <div class="btn-group ms-5">
-                                        <button type="button" class="btn btn-outline-light dropdown-toggle text-secondary" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                            <?php echo strtoupper($_SESSION["userName"]); ?>
+                                    <div class="btn-group ms-4">
+                                        <button type="button" style="background-color: #146EBE;" class="btn btn-sm dropdown-toggle text-white text-secondary d-flex align-items-center justify-content-center" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                            <!-- <span class="d-flex align-items-center justify-content-center"> -->
+                                                <i class="fa-solid fa-user mx-2 text-white"></i> 
+                                                <a href="#" class="text-decoration-none text-white"><?php echo strtoupper($_SESSION["userName"]); ?></a>
+                                            <!-- </span> -->
                                         </button>
                                         <ul class="dropdown-menu shadow border-0 dropdown-menu-end dropdown-menu-lg-right">
                                             <li><a class="dropdown-item text-muted" href="profile.php?status=profile"><i class="fa-regular fa-user me-2"></i> My Profile</a></li>
@@ -481,7 +489,10 @@ width: 100% !important;
                                 ?>
                                     <div class="btn-group ms-5">
                                         <button type="button" class="btn btn-outline-light dropdown-toggle text-secondary" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                            <?php echo strtoupper($_SESSION["adminName"]); ?>
+                                            <span class="d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-user"></i>
+                                                <a href="" class="text-muted"><?php echo strtoupper($_SESSION["adminName"]); ?></a>
+                                            </span>
                                         </button>
                                         <ul class="dropdown-menu shadow border-0 dropdown-menu-end dropdown-menu-lg-right">
                                             <li><a class="dropdown-item text-muted" href="profile.php?status=profile"><i class="fa-regular fa-user me-2"></i> My Profile</a></li>
@@ -495,10 +506,20 @@ width: 100% !important;
 
                             <?php  } else { ?>
                                 <li class="nav-item ms-md-5 me-md-2 login-btn">
-                                    <button type="button" class="btn btn-primary btn-sm p-0 m-0 rounded shadow-none w-100"><a class="nav-link fw-medium text-white" href="login.php">LOGIN</a></button>
+                                    <button type="button" style="background-color: #146EBE;" class="btn btn-sm p-0 m-0 rounded shadow-none w-100">
+                                    <span class="d-flex align-items-center justify-content-center">
+                                        <i class="ps-2 fa-solid fa-right-to-bracket text-white"></i> 
+                                        <a class="nav-link fw-medium text-white" href="login.php">LOGIN</a>
+                                    </span>
+                                </button>
                                 </li>
                                 <li class="nav-item register-btn">
-                                    <button type="button" class="btn btn-primary btn-sm p-0 m-0 rounded shadow-none w-100"><a class="nav-link fw-medium text-white" href="register.php">REGISTER</a></button>
+                                    <button type="button" style="background-color: #146EBE;" class="btn btn-sm p-0 m-0 rounded shadow-none w-100">
+                                    <span class="d-flex align-items-center justify-content-center">
+                                        <i class="ps-2 fa-solid fa-user-plus text-white"></i> 
+                                        <a class="nav-link fw-medium text-white" href="register.php">REGISTER</a>
+                                    </span>
+                                    </button>
                                 </li>
                             <?php } ?>
                         </ul>

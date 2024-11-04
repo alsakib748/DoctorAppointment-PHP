@@ -91,8 +91,36 @@
         </div>
     </section>
 </footer>
+
 <!-- Javascript Link -->
 <?php include "inc/js_link.php"; ?>
+
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+<script type="text/javascript">
+
+$('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 1000,  
+    stagePadding: 0,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+</script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -103,10 +131,11 @@
             crossFade: true
         },
         loop: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
+        navigation: false,
+        // navigation: {
+        //     nextEl: ".swiper-button-next",
+        //     prevEl: ".swiper-button-prev",
+        // },
         autoplay: {
             delay: 3000,
         },

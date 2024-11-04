@@ -59,8 +59,8 @@ if (isset($_GET['uemail']) && isset($_GET['utoken'])) {
         <div class="row">
             <div class="col-md-6 col-sm-12 d-md-flex justify-content-md-end login-card">
                 <div class="card border-0 shadow w-75">
-                    <div class="card-header">
-                        <h4 class="">Login</h4>
+                    <div class="card-header" style="background-color: #146EBE">
+                        <h4 class="text-center text-white">Login</h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="POST" id="login-form">
@@ -73,11 +73,19 @@ if (isset($_GET['uemail']) && isset($_GET['utoken'])) {
                                 <input type="password" class="form-control" name="pass" id="passId">
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                                    <label class="form-check-label" for="exampleCheck1"><a href="">Forgot Your Password?</a></label>
+
+                                    <div class="check">
+                                        <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Remember Me</label> -->
+                                    </div>
+                                    <div class="forgot-password">
+                                        <label class="form-check-label" for="exampleCheck1"><a href="">Forgot Your Password?</a></label>
+                                    </div>
+                                    
                                 </div>
+
                             </div>
                             <button type="submit" class="btn w-100 btn-primary mb-2">Login</button>
                             <div class="my-3">
@@ -88,7 +96,7 @@ if (isset($_GET['uemail']) && isset($_GET['utoken'])) {
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 login-img">
-                <img src="admin/images/contact/demo/img-4.jpg" class="img-fluid w-75 " style="height: 400px;" />
+                <img src="admin/images/auth/login-1.jpg" class="img-fluid w-75 " />
             </div>
         </div>
     </div>

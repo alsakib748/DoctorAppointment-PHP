@@ -37,44 +37,46 @@ if (isset($_SESSION["adminLogin"]) && $_SESSION["adminLogin"] == true) {
 <section class="my-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-12 d-md-flex justify-content-md-end register-card">
-                <div class="card border-0 shadow w-75">
-                    <div class="card-header">
-                        <h4 class="">Register</h4>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 col-sm-12 d-md-flex align-items-md-center justify-content-md-end register-card">
+                <div class="card border-0 shadow w-100 ">
+                    <div class="card-header" style="background-color: #146EBE">
+                        <h4 class="text-center text-white">Register</h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="POST" name="signup_form" id="signup_form">
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label for="full-name" class="form-label">Full Name</label>
                                 <input type="text" name="name" class="form-control" id="full-name" required>
                             </div>
-                            <div class="mb-3" id="email_div_id">
+                            <div class="mb-2" id="email_div_id">
                                 <label for="email-address" class="form-label">Email address</label>
                                 <input type="email" name="email" class="form-control" id="email-address" required>
                             </div>
-                            <div class="mb-3" id="phone_div_id">
+                            <div class="mb-2" id="phone_div_id">
                                 <label for="phone-number" class="form-label">Phone Number</label>
                                 <input type="number" name="contact" class="form-control" id="phone-number" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label for="pass" class="form-label">Password</label>
                                 <input type="password" name="pass" class="form-control" id="pass" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label for="confirm_pass" class="form-label">Confirm Password</label>
                                 <input type="password" name="confirm_pass" class="form-control" id="confirm_pass" required>
                             </div>
-                            <button type="submit" class="btn w-100 btn-primary mb-2">Register</button>
-                            <div class="my-3">
+                            <button type="submit" class="btn w-100 btn-primary mt-1">Register</button>
+                            <div class="mt-2">
                                 <h6 class="text-center">Already have an account ? <a href="login.php">Login</a> Now.</h6>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12 register-img">
-                <img src="admin/images/contact/demo/img-1.jpg" class="img-fluid w-75" style="height: 620px;" />
+            <div class="col-md-5 col-sm-12 register-img">
+                <img src="admin/images/auth/register-1.jpg" class="img-fluid w-100 h-100" />
             </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 </section>
