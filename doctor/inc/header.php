@@ -14,6 +14,14 @@ if (!(isset($_SESSION["doctorLogin"]) && $_SESSION["doctorLogin"] == true)) {
     <title>Dashboard</title>
     <?php include "../inc/css_link.php"; ?>
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <style>
+        /* Hide the navbar-toggler-icon on small screens */
+        @media (max-width: 767.98px) {
+            .navbar-toggler-icon {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-light">
@@ -25,7 +33,7 @@ if (!(isset($_SESSION["doctorLogin"]) && $_SESSION["doctorLogin"] == true)) {
                         <img src="" />
                     </div>
                     <p class="m-3 fs-6 fw-semibold text-muted">MANAGE</p>
-                    <div class="">
+                    <div class="" >
                         <ul class="nav nav-pills nav-sidebar flex-column">
                             <li class="nav-item py-1 dash-item">
                                 <a class="nav-link fw-semibold text-secondary" href="dashboard.php"><i class="bi bi-house-heart-fill me-1"></i> Dashboard</a>

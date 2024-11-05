@@ -72,13 +72,13 @@ if (isset($_GET['uemail']) && isset($_GET['utoken'])) {
                                 <label for="passId" class="form-label">Password</label>
                                 <input type="password" class="form-control" name="pass" id="passId">
                             </div>
-                            <div class="mb-3 form-check">
+                            <!-- <div class="mb-3 form-check">
                                 
                                 <div class="d-flex align-items-center justify-content-between">
 
                                     <div class="check">
-                                        <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Remember Me</label> -->
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                                     </div>
                                     <div class="forgot-password">
                                         <label class="form-check-label" for="exampleCheck1"><a href="">Forgot Your Password?</a></label>
@@ -86,7 +86,7 @@ if (isset($_GET['uemail']) && isset($_GET['utoken'])) {
                                     
                                 </div>
 
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn w-100 btn-primary mb-2">Login</button>
                             <div class="my-3">
                                 <h6 class="text-center">Don't have an account ? <a href="register.php">Register</a> Now.</h6>

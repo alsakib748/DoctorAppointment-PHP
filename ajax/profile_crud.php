@@ -112,3 +112,25 @@ if (isset($_POST["action"]) && $_POST["action"] == "loadProfileData") {
 
     echo json_encode($row);
 }
+
+if (isset($_POST["action"]) && $_POST["action"] == "updateProfile") {
+
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $age = $_POST["age"];
+    $dob = $_POST["dob"];
+    $gender = $_POST["gender"];
+
+    $updateProfileSql = "UPDATE `users` SET `name` = '{$name}', `email` = '{$email}', `contact` = '{$phone}', `age` = '{$age}', `dob` = '{$dob}' , `gender` = '{$gender}' WHERE `email` = '{$email}' ";
+
+    $updateProfileSqlResult = mysqli_query($con, $updateProfileSql);
+
+    if ($updateProfileSqlResult) {
+        echo 1;
+        
+    } else {
+        echo 0;
+    }
+
+}

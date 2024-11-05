@@ -86,7 +86,7 @@
 
                     <p class="text-secondary">@Copyright ASA it. All rights reserved 2024.</p>
 
-                    <p class="text-secondary">Design & Developed by - <span class="text-white">AL SAKIB AYON</span></p>
+                    <p class="text-secondary">Design & Developed by - <span class="text-white"><a href="https://github.com/alsakib748" class="text-white">AL SAKIB AYON</a></span></p>
             </div>
         </div>
     </section>
@@ -105,7 +105,7 @@ $('.owl-carousel').owlCarousel({
     nav: false,
     dots: false,
     autoplay: true,
-    autoplayTimeout: 1000,  
+    autoplayTimeout: 2000,  
     stagePadding: 0,
     responsive:{
         0:{

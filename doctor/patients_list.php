@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <div class="mt-2">
+                <div class="table-responsive mt-2">
 
                     <table class='table table-striped table-light table-hover table-bordered'>
                         <thead class="text-center">

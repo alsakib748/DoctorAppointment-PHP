@@ -17,7 +17,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "loadViewAppointmentsData") {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
             echo json_encode(array("userSuccess" => $row));
-        }else if(mysqli_num_rows($adminSqlResult) > 0){
+        } else if (mysqli_num_rows($adminSqlResult) > 0) {
             $row = mysqli_fetch_assoc($adminSqlResult);
             echo json_encode(array("adminSuccess" => $row));
         }
@@ -27,18 +27,20 @@ if (isset($_POST["action"]) && $_POST["action"] == "loadViewAppointmentsData") {
 }
 
 if ((isset($_POST["apt_id"])) && (isset($_POST["appointment_status"]) || isset($_POST["fees_status"]) || isset($_POST["doctor_comment"]))) {
+
     $apt_id = $_POST["apt_id"];
     $apt_status = $_POST["appointment_status"] ? $_POST["appointment_status"] : "";
     $fees_status = $_POST["fees_status"] ? $_POST["fees_status"] : "";
     $doctor_comment = $_POST["doctor_comment"] ? $_POST["doctor_comment"] : "";
 
-    $sql = "UPDATE `appointments_feedback` SET `doctor_comment`='{$doctor_comment}', `appointment_status`='{$apt_status}', `fees_status`='{$fees_status}' WHERE `appointment_id` = $apt_id ";
+        $sql = "UPDATE `appointments_feedback` SET `doctor_comment`='{$doctor_comment}', `appointment_status`='{$apt_status}', `fees_status`='{$fees_status}' WHERE `appointment_id` = $apt_id ";
 
-    $result = mysqli_query($con, $sql);
+        $result = mysqli_query($con, $sql);
 
-    if ($result) {
-        echo "Appointment status update successfully";
-    } else {
-        echo "Appointment status update failed !!";
-    }
+        if ($result) {
+            echo "Appointment status update successfully";
+        } else {
+            echo "Appointment status update failed !!";
+        }
+        
 }

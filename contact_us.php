@@ -64,7 +64,7 @@ if (isset($_SESSION["adminLogin"]) && $_SESSION["adminLogin"] == true) {
             </ul>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
-            <img src="admin/images/contact/demo/img-3.jpg" class="img-fluid w-75"  style="height: 450px;" />
+            <img src="admin/images/auth/register-11.png" class="img-fluid w-75"   />
         </div>
         </div>
     </div>

@@ -46,6 +46,9 @@ if (isset($_POST["status"]) && $_POST["status"] == "loadTimings") {
 
 if (isset($_POST["day"]) || isset($_POST["shift"]) || isset($_POST["start"]) || isset($_POST["end"]) || isset($_POST["avg_time"])) {
     if (!($_POST["day"] == "") && !($_POST["shift"] == "") && !($_POST["start"] == "") && !($_POST["end"] == "") && !($_POST["avg_time"] == "")) {
+
+        $doctor_id = $_SESSION['doctorId'];
+
         $day = $_POST["day"];
         $shift = $_POST["shift"];
         $start = $_POST["start"];
@@ -55,7 +58,7 @@ if (isset($_POST["day"]) || isset($_POST["shift"]) || isset($_POST["start"]) || 
         $end_time = date("g:i:s a", strtotime($end));
         $doctor_id = $_SESSION["doctorId"];
 
-        $checkTiming = mysqli_query($con, "SELECT * FROM `timings` WHERE `day` = '{$day}' AND `shift` = '{$shift}' ");
+        $checkTiming = mysqli_query($con, "SELECT * FROM `timings` WHERE `day` = '{$day}' AND `shift` = '{$shift}' AND `doctor_id` = $doctor_id ");
 
         if (mysqli_num_rows($checkTiming) > 0) {
             echo "This Timings already exist";

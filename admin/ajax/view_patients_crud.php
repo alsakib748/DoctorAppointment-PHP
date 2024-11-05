@@ -5,6 +5,7 @@ include "../inc/db.php";
 function fetchData($output,$result){
     // $output = "";
     $output .= "
+    <div class='table-responsive'>
     <table class='table table-striped table-light table-hover table-bordered'>
     <thead>
         <tr>
@@ -38,6 +39,7 @@ function fetchData($output,$result){
         $output .= "
         </tbody>
         </table>
+        </div>
         ";
 
         return $output;

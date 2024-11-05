@@ -5,7 +5,7 @@ include "../inc/db.php";
 date_default_timezone_set("Asia/Dhaka");
 
 if(isset($_POST["action"]) && $_POST["action"] == "todayAppointmentsData"){
-    $sql = "SELECT `users`.`name`,`users`.`email`,`users`.`contact`,`appointments`.`apt_no`,`appointments`.`apt_date`,`appointments`.`status` FROM `appointments` INNER JOIN `users` ON `appointments`.`patient_id` = `users`.`id`  WHERE `apt_date` = CURDATE() AND `appointments`.`status` = 'Booked' ";
+    $sql = "SELECT `users`.`name`,`users`.`email`,`users`.`contact`,`appointments`.`apt_no`,`appointments`.`apt_date`,`appointments`.`status` FROM `appointments` INNER JOIN `users` ON `appointments`.`patient_id` = `users`.`id`  WHERE `current_date` = CURDATE() AND `appointments`.`status` = 'Booked' ";
     $result = mysqli_query($con,$sql);
     $output = "";
     if(mysqli_num_rows($result) > 0){

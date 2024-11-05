@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label for="apt_number" class="form-label">Alternate Phone Number</label>
+                                <label for="apt_number" class="form-label">Phone Number</label>
                                 <input type="text" class="form-control shadow-none" id="apt_number">
                             </div>
                         </div>
@@ -71,15 +71,15 @@
                                 <label for="apt_email" class="form-label">Gender</label>
                                 <select class="form-select shadow-none" id="apt_gender">
                                     <option value="" selected>Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Others">Others</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="others">Others</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label for="apt_number" class="form-label">Phone</label>
+                                <label for="apt_number" class="form-label">Alternative Phone Number</label>
                                 <input type="text" class="form-control shadow-none" id="apt_number2">
                             </div>
                         </div>
@@ -191,7 +191,10 @@
                             $("#apt_email").val(data.userSuccess.email);
                             $("#apt_number").val(data.userSuccess.contact);
                             $("#apt_age").val(data.userSuccess.age);
-                            $("#apt_gender").val(data.userSuccess.gender);
+
+                            var apt_gender = data.userSuccess.gender.toLowerCase(); // Ensure the value is in lowercase
+                            $("#apt_gender").val(apt_gender);
+
                             $("#apt_dob").val(data.userSuccess.dob);
                             $("#apt_comment").val(data.userSuccess.user_comment);
                             // 
@@ -211,10 +214,10 @@
                             $("#apt_name").val(data.adminSuccess.name);
                             $("#apt_email").val(data.adminSuccess.email);
                             $("#apt_number").val(data.adminSuccess.contact);
-                            // $("#apt_age").val(data.userSuccess.age);
-                            // $("#apt_gender").val(data.userSuccess.gender);
-                            // $("#apt_dob").val(data.userSuccess.dob);
-                            // $("#apt_comment").val(data.userSuccess.user_comment);
+                            $("#apt_age").val(data.userSuccess.age);
+                            $("#apt_gender").val(data.userSuccess.gender);
+                            $("#apt_dob").val(data.userSuccess.dob);
+                            $("#apt_comment").val(data.userSuccess.user_comment);
                             // 
                             $("#apt_fees").val(data.adminSuccess.fees);
                             //
@@ -243,8 +246,12 @@
                 method: "POST",
                 data:  $("#appointment_status_update_form").serialize(),
                 success: function(response){
-                    console.log(response);
-                    alert(response);
+                    // console.log(response);
+                    // alert(response);
+                    if(response == "Appointment status update successfully"){
+                        alert(response);
+                        location.reload();
+                    }    
                 }
             });
 

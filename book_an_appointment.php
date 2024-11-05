@@ -71,14 +71,13 @@ if ((isset($_SESSION["adminLogin"]) && $_SESSION["adminLogin"] == true)  || (iss
             <section class="">
                 <div class="container">
                     <form action='' method='POST' id='schedule_form'>
-                        <div class="row">
-                            <div class="col-md-6" id="shift1_timing">
 
-                            </div>
-                            <div class="col-md-6" id="shift2_timing">
+                        <div class="row" id="shift_timing">
 
-                            </div>
+
+
                         </div>
+
                     </form>
                 </div>
             </section>
@@ -181,43 +180,46 @@ if ((isset($_SESSION["adminLogin"]) && $_SESSION["adminLogin"] == true)  || (iss
             });
         }
         loadData();
+
         // Todo: Timing Schedule show function in shift 1
-        function loadTimingShift1() {
-            let id = "<?php echo isset($_GET["id"]) ? $_GET["id"] : 'alert("Invalid Link")'; ?>";
+        function loadTimingShift() {
+
+            let doctor_id = "<?php echo isset($_GET["id"]) ? $_GET["id"] : 'alert("Invalid Link")'; ?>";
             $.ajax({
                 url: "ajax/book_an_appointment_crud.php",
                 method: "POST",
                 data: {
-                    id: id,
-                    action: "loadTimingDetailsShift1"
+                    doctor_id: doctor_id,
+                    action: "loadTimingDetailsShift"
                 },
                 success: function(data) {
-                    $("#shift1_timing").html(data);
+                    $("#shift_timing").html(data);
                     // console.log(data);
                 }
             });
+
         }
 
-        loadTimingShift1();
+        loadTimingShift();
 
         // Todo: Timing Schedule show function in shift 2
-        function loadTimingShift2() {
-            let id = "<?php echo isset($_GET["id"]) ? $_GET["id"] : 'alert("Invalid Link")'; ?>";
-            $.ajax({
-                url: "ajax/book_an_appointment_crud.php",
-                method: "POST",
-                data: {
-                    id: id,
-                    action: "loadTimingDetailsShift2"
-                },
-                success: function(data) {
-                    $("#shift2_timing").html(data);
-                    // console.log(data);
-                }
-            });
-        }
+        // function loadTimingShift2() {
+        //     let id = "<?php echo isset($_GET["id"]) ? $_GET["id"] : 'alert("Invalid Link")'; ?>";
+        //     $.ajax({
+        //         url: "ajax/book_an_appointment_crud.php",
+        //         method: "POST",
+        //         data: {
+        //             id: id,
+        //             action: "loadTimingDetailsShift2"
+        //         },
+        //         success: function(data) {
+        //             $("#shift2_timing").html(data);
+        //             // console.log(data);
+        //         }
+        //     });
+        // }
 
-        loadTimingShift2();
+        // loadTimingShift2();
 
         // Todo: submit schedule time
 
